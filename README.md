@@ -95,7 +95,6 @@ Accept LXD init with all default values
 	* Other libraries and modules
 
 * Run installation scripts
-    * Option 1 Using ansible scripts from command line:
     ```
     cd /home/jenkins/github/X-Road/ansible
     sudo ansible-playbook -i /home/jenkins/github/X-Road-tests-environment/ansible/hosts/xroad_hosts.txt xroad_init.yml
@@ -105,11 +104,12 @@ Accept LXD init with all default values
     In case of failure retry.
     
 
-#### 7. Add ssh key to allow ssh.
+#### 7. Add ssh keys to allow ssh.
 ```
 # Copy or create ssh key
 # e.g https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 sudo chmod 400 /home/jenkins/.ssh/id_rsa
 ```
@@ -134,7 +134,13 @@ Restart linux for changes to take effect
 
 #### 9. LXD container configuration uploads
 
+- Open jenkins on localhost:8080
 - Upload softreset and other configuration files to LXD containers by running jenkins job environment-job-upload-lxd-confs
+
+#### 10 Run regression tests
+
+- Run regression or environment jobs from jenkins
+- Jobs descriptions can be found in jenkins_config [README](jenkins_config/jobs/README.md)
 
 ## Resetting X-Road servers
 
