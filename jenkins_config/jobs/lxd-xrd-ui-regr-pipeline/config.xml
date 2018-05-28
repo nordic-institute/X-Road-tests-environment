@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<flow-definition plugin="workflow-job@2.17">
+<flow-definition plugin="workflow-job@2.21">
   <actions/>
   <description></description>
   <keepDependencies>false</keepDependencies>
@@ -13,9 +13,27 @@
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
         <hudson.model.StringParameterDefinition>
-          <name>LXD_TEST_BRANCH</name>
+          <name>TEST_REPOSITORY</name>
           <description></description>
-          <defaultValue>*/develop</defaultValue>
+          <defaultValue>https://bitbucket.niis.org/scm/x-road/X-Road-tests.git</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>TEST_BRANCH</name>
+          <description></description>
+          <defaultValue>develop</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>LIBRARY_REPOSITORY</name>
+          <description></description>
+          <defaultValue>https://github.com/nordic-institute/QAutoLibrary</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>LIBRARY_BRANCH</name>
+          <description></description>
+          <defaultValue>master</defaultValue>
           <trim>false</trim>
         </hudson.model.StringParameterDefinition>
         <hudson.model.ChoiceParameterDefinition>
@@ -28,27 +46,16 @@
             </a>
           </choices>
         </hudson.model.ChoiceParameterDefinition>
-        <hudson.model.ChoiceParameterDefinition>
-          <name>RESET_TYPE</name>
-          <description></description>
-          <choices class="java.util.Arrays$ArrayList">
-            <a class="string-array">
-              <string>Repository</string>
-            </a>
-          </choices>
-        </hudson.model.ChoiceParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
     <EnvInjectJobProperty plugin="envinject@2.1.5">
       <info>
-        <propertiesContent>LXD_TEST_REPOSITORY=https://github.com/vrk-kpa/X-Road-tests
-LXD_TEST_BRANCH=*/develop
-TEST_REPOSITORY_SUBFOLDER=tests
-TEST_PROJECT_DIR=$TEST_REPOSITORY_SUBFOLDER/common/xrd-ui-tests-qautomate
+        <propertiesContent>TEST_REPOSITORY_SUBFOLDER=tests
+PIPELINE_BRANCH=master
 QUIET_PERIOD=10
 AGENT=master
-PIPELINE_BRANCH=master</propertiesContent>
-        <secureGroovyScript plugin="script-security@1.41">
+RESET_TYPE=Repository</propertiesContent>
+        <secureGroovyScript plugin="script-security@1.44">
           <script></script>
           <sandbox>false</sandbox>
         </secureGroovyScript>
@@ -63,18 +70,17 @@ PIPELINE_BRANCH=master</propertiesContent>
       <triggers/>
     </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
   </properties>
-  <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps@2.45">
-    <scm class="hudson.plugins.git.GitSCM" plugin="git@3.8.0">
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps@2.53">
+    <scm class="hudson.plugins.git.GitSCM" plugin="git@3.9.0">
       <configVersion>2</configVersion>
       <userRemoteConfigs>
         <hudson.plugins.git.UserRemoteConfig>
-          <url>$SHARED_LIB_REPOSITORY</url>
-          <credentialsId>b7a9b945-4430-4598-8d5d-ad6ed0941c5f</credentialsId>
+          <url>https://bitbucket.niis.org/scm/x-road/X-Road-tests-environment.git</url>
         </hudson.plugins.git.UserRemoteConfig>
       </userRemoteConfigs>
       <branches>
         <hudson.plugins.git.BranchSpec>
-          <name>*/$PIPELINE_BRANCH</name>
+          <name>*/master</name>
         </hudson.plugins.git.BranchSpec>
       </branches>
       <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
@@ -82,7 +88,7 @@ PIPELINE_BRANCH=master</propertiesContent>
       <extensions/>
     </scm>
     <scriptPath>pipelines/Jenkinsfile-xrd-ui-regr-pipeline</scriptPath>
-    <lightweight>false</lightweight>
+    <lightweight>true</lightweight>
   </definition>
   <triggers/>
   <disabled>false</disabled>

@@ -47,13 +47,17 @@
     </hudson.plugins.buildblocker.BuildBlockerProperty>
     <EnvInjectJobProperty plugin="envinject@2.1.5">
       <info>
-        <propertiesContent>TEST_OR_PROFILE_NAME=tests/xroad_ss_server_management.robot
-TEST_DATA=data/lxd_parameters/xroad_ss_server_management.xml
+        <propertiesContent>TEST_OR_PROFILE_NAME=tests/xroad_install_ui_configuration.robot
+TEST_DATA=data/lxd_parameters/xroad_install_ui_configuration.xml
 TEST_PROJECT_DIR=tests/common/xrd-ui-tests-qautomate
 PIPELINE_BRANCH=master
 TEST_REPOSITORY_SUBFOLDER=tests
 LIBRARY_REPOSITORY_SUBFOLDER=QAutoLibrary
 DISPLAY_NUMBER=0
+
+
+
+
 </propertiesContent>
         <secureGroovyScript plugin="script-security@1.44">
           <script></script>
@@ -85,7 +89,7 @@ DISPLAY_NUMBER=0
       <extensions/>
     </scm>
     <scriptPath>pipelines/Jenkinsfile-generic-run-tests</scriptPath>
-    <lightweight>false</lightweight>
+    <lightweight>true</lightweight>
   </definition>
   <triggers/>
   <disabled>false</disabled>
