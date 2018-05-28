@@ -27,4 +27,3 @@ sudo -H -u postgres psql -c 'DROP DATABASE centerui_production'
 sudo -H -u postgres psql -c 'DROP USER centerui'
 sudo apt-get update
 sudo apt-get -o DPkg::Options::="--force-confmiss" install --fix-missing --reinstall -y xroad-centralserver xroad-autologin
-sudo -u postgres psql -c "update approved_cas set identifier_decoder_method_name = 'ee.ria.xroad.common.util.FISubjectClientIdDecoder.getSubjectClientId';" centerui_production

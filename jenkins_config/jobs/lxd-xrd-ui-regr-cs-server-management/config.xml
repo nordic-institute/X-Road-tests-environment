@@ -16,19 +16,19 @@
         <hudson.model.StringParameterDefinition>
           <name>TEST_REPOSITORY</name>
           <description></description>
-          <defaultValue>https://github.com/vrk-kpa/X-Road-tests</defaultValue>
+          <defaultValue>https://bitbucket.niis.org/scm/x-road/X-Road-tests.git</defaultValue>
           <trim>false</trim>
         </hudson.model.StringParameterDefinition>
         <hudson.model.StringParameterDefinition>
           <name>TEST_BRANCH</name>
           <description></description>
-          <defaultValue>PVAYLADEV-1134</defaultValue>
+          <defaultValue>develop</defaultValue>
           <trim>false</trim>
         </hudson.model.StringParameterDefinition>
         <hudson.model.StringParameterDefinition>
           <name>LIBRARY_REPOSITORY</name>
           <description></description>
-          <defaultValue>https://github.com/pekkaan/QAutorobotLibrary</defaultValue>
+          <defaultValue>https://github.com/nordic-institute/QAutoLibrary</defaultValue>
           <trim>false</trim>
         </hudson.model.StringParameterDefinition>
         <hudson.model.StringParameterDefinition>
@@ -50,9 +50,9 @@
         <propertiesContent>TEST_OR_PROFILE_NAME=tests/xroad_cs_server_management.robot
 TEST_DATA=data/lxd_parameters/xroad_cs_server_management.xml
 TEST_PROJECT_DIR=tests/common/xrd-ui-tests-qautomate
-PIPELINE_BRANCH=PVAYLADEV-1134
+PIPELINE_BRANCH=master
 TEST_REPOSITORY_SUBFOLDER=tests
-LIBRARY_REPOSITORY_SUBFOLDER=QautoRobot
+LIBRARY_REPOSITORY_SUBFOLDER=QAutoLibrary
 DISPLAY_NUMBER=0
 
 
@@ -74,12 +74,12 @@ DISPLAY_NUMBER=0
       <configVersion>2</configVersion>
       <userRemoteConfigs>
         <hudson.plugins.git.UserRemoteConfig>
-          <url>https://github.com/vrk-kpa/X-Road-tests-environment</url>
+          <url>https://bitbucket.niis.org/scm/x-road/X-Road-tests-environment.git</url>
         </hudson.plugins.git.UserRemoteConfig>
       </userRemoteConfigs>
       <branches>
         <hudson.plugins.git.BranchSpec>
-          <name>*/PVAYLADEV-1134</name>
+          <name>*/master</name>
         </hudson.plugins.git.BranchSpec>
       </branches>
       <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>

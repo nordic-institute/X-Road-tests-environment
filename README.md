@@ -1,6 +1,6 @@
 ## About the repository
 
-This repository contains X-Road lxd harmonized test automation environment installations used in conjunction with [X-Road](https://github.com/vrk-kpa/X-Road).
+This repository contains X-Road lxd harmonized test automation environment installations used in conjunction with [X-Road](https://bitbucket.niis.org/projects/X-ROAD/repos/x-road).
 
 ## Repositiory content
 
@@ -67,8 +67,8 @@ mkdir -p /home/jenkins/.ssh
 * Clone repositories under Github folder
 ```
 cd /home/jenkins/github
-git clone https://github.com/vrk-kpa/X-Road
-git clone https://github.com/vrk-kpa/X-Road-tests-environment
+git clone https://bitbucket.niis.org/scm/x-road/X-Road.git
+git clone https://bitbucket.niis.org/scm/x-road/X-Road-tests-environment.git
 ```
 
 #### 5. Install pre-setup configuration

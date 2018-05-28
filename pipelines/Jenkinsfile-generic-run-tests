@@ -1,7 +1,6 @@
 library identifier: "testJob@${PIPELINE_BRANCH}", retriever: modernSCM(
 [$class: 'GitSCMSource',
-remote: "${SHARED_LIB_REPOSITORY}",
-credentialsId: "${LIBRARY_KEY}"])
+remote: "${SHARED_LIB_REPOSITORY}"])
 
 def test_repository = collectParamsEnv("TEST_REPOSITORY")
 
