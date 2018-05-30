@@ -35,8 +35,6 @@ node {
        build job: "lxd-xrd-ui-regr-configure-servers", quietPeriod: quiet_period, parameters: jobparams
     }
 
-    testJob("environment-job-lxd-make-backup", jobparams, quiet_period, currentBuild)
-
     testJob("lxd-xrd-ui-regr-global-configuration", jobparams, quiet_period, currentBuild)
     testJob("lxd-xrd-ui-regr-cs-server-management", jobparams, quiet_period, currentBuild)
     testJob("lxd-xrd-ui-regr-ss-server-management", jobparams, quiet_period, currentBuild)
