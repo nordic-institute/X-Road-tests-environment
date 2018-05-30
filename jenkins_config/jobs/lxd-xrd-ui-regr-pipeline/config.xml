@@ -52,7 +52,7 @@
       <info>
         <propertiesContent>TEST_REPOSITORY_SUBFOLDER=tests
 PIPELINE_BRANCH=master
-QUIET_PERIOD=10
+QUIET_PERIOD=20
 AGENT=master
 RESET_TYPE=Repository</propertiesContent>
         <secureGroovyScript plugin="script-security@1.44">
