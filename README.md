@@ -1,6 +1,6 @@
 ## About the repository
 
-This repository contains X-Road lxd harmonized test automation environment installations used in conjunction with [X-Road](https://bitbucket.niis.org/projects/X-ROAD/repos/x-road).
+This repository contains X-Road lxd harmonized test automation environment installations used in conjunction with [X-Road](https://github.com/nordic-institute/X-Road).
 
 ## Repositiory content
 
