@@ -57,24 +57,13 @@
   with_items:
     - user
 
-- name: check if git repository has already been downloaded
-  stat: path="/root/{{ xroad_python_tests_root }}"
-  register: git_repo
-  ignore_errors: True
-
-- name: Remove git repository if it exists
-  file:
-    state: absent
-    path: "/root/{{ xroad_python_tests_root }}"
-  when: git_repo.stat.exists
-
-- name: download X-Road Python tests
-  shell: git clone -b {{ xroad_python_tests_git_branch }} {{ xroad_python_tests_git_path }}
-  args:
-    chdir: /root/
+- name: Copy tests folder from local
+  copy:
+    src: /home/jenkins/{{ xroad_mock_wsdl_path }}
+    dest: /home/wsdl
 
 - name: copy WSDL files to nginx directory
-  shell: cp -R /root/{{ xroad_mock_wsdl_path }}* /usr/share/nginx/html/www/
+  shell: cp -R /home/wsdl* /usr/share/nginx/html/www/
 
 - name: chmod WSDL files
   shell: chmod 755 -R /usr/share/nginx/html/www/*
