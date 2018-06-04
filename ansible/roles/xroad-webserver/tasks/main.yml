@@ -63,7 +63,7 @@
     dest: /home/wsdl
 
 - name: copy WSDL files to nginx directory
-  shell: cp -R /home/wsdl* /usr/share/nginx/html/www/
+  shell: cp -R /home/wsdl/. /usr/share/nginx/html/www/
 
 - name: chmod WSDL files
   shell: chmod 755 -R /usr/share/nginx/html/www/*
