@@ -16,7 +16,7 @@
         <hudson.model.StringParameterDefinition>
           <name>TEST_REPOSITORY</name>
           <description></description>
-          <defaultValue>https://bitbucket.niis.org/scm/x-road/X-Road-tests.git</defaultValue>
+          <defaultValue>https://gogs.niis.org/X-ROAD/X-Road-tests.git</defaultValue>
           <trim>false</trim>
         </hudson.model.StringParameterDefinition>
         <hudson.model.StringParameterDefinition>
@@ -76,7 +76,7 @@ DISPLAY_NUMBER=0
       <configVersion>2</configVersion>
       <userRemoteConfigs>
         <hudson.plugins.git.UserRemoteConfig>
-          <url>https://bitbucket.niis.org/scm/x-road/X-Road-tests-environment.git</url>
+          <url>https://gogs.niis.org/X-ROAD/X-Road-tests-environment.git</url>
         </hudson.plugins.git.UserRemoteConfig>
       </userRemoteConfigs>
       <branches>
