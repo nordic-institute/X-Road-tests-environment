@@ -17,7 +17,7 @@ pycharm_download_path: https://download.jetbrains.com/python/pycharm-community-2
 pycharm_archive_filename: pycharm.tar.gz
 
 # Used for xroad-python-tests
-xroad_python_tests_git_path: https://gogs.niis.org/X-ROAD/X-Road-tests.git
+xroad_python_tests_git_path: https://github.com/nordic-institute/X-Road-tests.git
 xroad_python_tests_git_branch: develop
 xroad_python_tests_local_path: /home/jenkins/
 xroad_python_tests_root: X-Road-tests
