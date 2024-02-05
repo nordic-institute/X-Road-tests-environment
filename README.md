@@ -67,8 +67,8 @@ mkdir -p /home/jenkins/.ssh
 * Clone repositories under Github folder
 ```
 cd /home/jenkins/github
-git clone https://bitbucket.niis.org/scm/x-road/X-Road.git
-git clone https://bitbucket.niis.org/scm/x-road/X-Road-tests-environment.git
+git clone https://github.com/nordic-institute/X-Road.git
+git clone https://github.com/nordic-institute/X-Road-tests-environment.git
 ```
 
 #### 5. Install pre-setup configuration
